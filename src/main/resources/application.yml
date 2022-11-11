@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+app:
+  auth:
+    jwt:
+      token:
+        access:
+          secret: dsadsadasdasdasdasdasdsadasdas
+          expired: 5000
+        refresh:
+          expired: 10000
+          cron: '1 * * * * *'
+    session:
+      cron: '*/30 * * * * *'
+
